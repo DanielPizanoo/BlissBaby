@@ -25,7 +25,7 @@
         $resultado = mysqli_query($con, $sql);
         
         if($resultado) {
-            header('location: login.php'.$newURL);
+            header('location: login.php');
         } else {
             header('location: ./inicio.html');
         }

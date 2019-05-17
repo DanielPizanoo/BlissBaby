@@ -57,7 +57,6 @@
     </main>
     <main class="main">
         <div class="contenedor">
-            <!--<h2 class="section__titulo">Niñer@s</h2>-->
             <section class="info">
                 <article class="info__columna">
                     <img src="../img/elizabeth.jpg" alt="" class="info__img">

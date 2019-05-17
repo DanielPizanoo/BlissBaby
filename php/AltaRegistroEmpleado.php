@@ -23,7 +23,7 @@
         $resultado = mysqli_query($con, $sql);
         
         if($resultado) {
-            header('location: ./php/login.php');
+            header('location: login.php');
         } else {
             header('location: ../inicio.html');
         }
