@@ -27,10 +27,21 @@
         <img src="../img/BlissBaby.png" alt="" class="logo">
         <img src="../img/nine.jpg" alt="" class="banner__img">
     </div>
+    <?php
+					include("conexion.php");
+    
+                    $id = $_REQUEST['id_empleado'];
+
+					$query = "SELECT * FROM contrato WHERE id_empleado = '$id'";
+					$resultado= $conexion->query($query);
+					$row = $resultado->fetch_assoc(); 
+				?>
     <main class="main">
         <div class="form">
-            <form class="box" action="proceso_guardar.php" method="POST" enctype="multipart/form-data">
+            <form class="box" action="proceso_modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>" method="POST" enctype="multipart/form-data">
                 <span>Subir tu foto:</span>
+                <img src="data: image/jpg;base64,<?php echo base64_encode($row['foto']); ?>" />
+                <br>
                 <input class="inputbox" type="file" name="foto" value="" required>
                 <br>
                 <!--Datos a extraer de la BD-->
@@ -38,14 +49,9 @@
                 <!--Datos a GUARDAR en la BD-->
                 <label for="fecha_nac">Fecha de nacimiento</label>
                 <br>
-                <input required type="date" id="fecha_nac" name="f_nacimiento" />
-                <br>
-                <br>
-                <select name="sexo" required>
-                    <option>Femenino</option>
-                    <option>Masculino</option>
-                </select>
-                <br>
+                <p class="info__txt"><?php echo $row['f_nacimiento']; ?></p>
+                
+                <p class="info__txt"><?php echo $row['sexo']; ?></p>
                 <p class="info__txt">TARIFA</p>
                 <select name="tarifa" required>
                     <option>$30 la hora por niño</option>
@@ -54,6 +60,7 @@
                     <option>$100 el día completo un niño</option>
                     <option>$200 el día completo dos niño</option>
                 </select>
+                <br>
                 <input type="submit" id="guardar" name="enviar" value="Enviar" />
                 <input type="button" value="Regresar" name="regresar" onclick="window.history.back()" />
             </form>

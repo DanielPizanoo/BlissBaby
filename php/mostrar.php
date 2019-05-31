@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA">
+    <title>BlissBaby</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link href="https://file.myfontastic.com/t2QshyG9nHANCLZAGGRQTA/icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <span class="icon-menu" id="btn-menu"></span>
+            <nav class="nav" id="nav">
+                <ul class="menu">
+                    <li class="menu__item"><a class="menu__link" href="../inicio.php">Inicio</a> </li>
+                    <li class="menu__item"><a class="menu__link" href="../servicio.php">Servicios</a> </li>
+                    <li class="menu__item"><a class="menu__link select" href="../php/empleado.php">Logueado</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="banner">
+        <img src="../img/BlissBaby.png" alt="" class="logo">
+        <img src="../img/nine.jpg" alt="" class="banner__img">
+    </div>
+                <?php
+					include("conexion.php");
+
+					$query = "SELECT * FROM contrato";
+					$resultado= $conexion->query($query);
+					while ($row = $resultado->fetch_assoc()) {
+				?>
+    <main class="main">
+        <div class="contenedor">
+            <!--<h2 class="section__titulo">Niñer@s</h2>-->
+            <section class="info1">
+                <article class="info__columna">
+                    <img src="data: image/jpg;base64,<?php echo base64_encode($row['foto']); ?>"/>
+                    <!--Datos a extraer nombre de la BD-->
+                    <h3 class="info__titulo">Elizabeth</h3>
+                    <!--Datos a extraer fechaNac de la BD y convertir a edad-->
+                    <p class="info__txt"><?php echo $row['f_nacimiento']; ?>
+                    
+                    
+                    <p class="info__txt"><?php echo $row['sexo']; ?></p>
+                    <p class="info__txt">TARIFA</p>
+                    <p class="info__txt"><?php echo $row['tarifa']; ?></p>
+                    
+                    <a href="modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>">Modificar</a>
+                    <a href="eliminar.php?id_empleado=<?php echo $row['id_empleado']; ?>">Eliminar</a>
+                <?php
+					}
+				?>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="social"></div>
+        <p class="copy">&copy; Bliss Baby 2019 - Todos los derechos reservados</p>
+    </footer>
+    <script src="../js/inicio.js"></script>
+</body>
+
+</html>

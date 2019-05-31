@@ -14,8 +14,8 @@
                 <span class="icon-menu" id="btn-menu"></span>
                 <nav class="nav" id="nav">
                     <ul class="menu">
-                        <li class="menu__item"><a class="menu__link" href="inicio.html">Inicio</a> </li>
-                        <li class="menu__item"><a class="menu__link" href="servicio.html">Servicios</a> </li>
+                        <li class="menu__item"><a class="menu__link" href="inicio.php">Inicio</a> </li>
+                        <li class="menu__item"><a class="menu__link" href="servicio.php">Servicios</a> </li>
                         <li class="menu__item"><a class="menu__link select" href="./php/login.php">Iniciar Sesión</a> </li>
                     </ul>
                 </nav>
