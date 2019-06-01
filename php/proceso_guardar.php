@@ -1,16 +1,7 @@
 <?php
-	include("ValidarLogin.php");
+	include("conexion.php");
     
     $f_nacimiento = $_POST['f_nacimiento'];
-    /*function f_nacimiento($fecha){
-    $fecha = str_replace("/","-",$fecha);
-    $fecha = date('Y/m/d',strtotime($fecha));
-    $hoy = date('Y/m/d');
-    $edad = $hoy - $fecha;
-    return $edad;
-    }
-    if (isset($_POST[fecha]))
-    echo "Tiene ".f_nacimiento($_POST[fecha])." Años";*/
         
             
     $sexo = $_POST['sexo'];
@@ -18,9 +9,20 @@
 	$foto = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
 
 	$query = "INSERT INTO contrato(foto,f_nacimiento,sexo,tarifa) VALUES('$foto','$f_nacimiento','$sexo','$tarifa')";
-	$resultado = $con->query($query);
+	$resultado = $conexion->query($query);
+    
+    /*$sql = "SELECT AVG(YEAR(CURDATE())-YEAR(f_nacimiento) + if(date_format(CURDATE(),'%m-%d') > date_format(f_nacimiento,'%m-%d'), 0,-1 )) as promedio FROM contrato ";
+                    $resultado2 = $conexion -> query($sql);
 
-	if ($resultado) {
+                    if ($row2 = $resultado2->fetch_assoc()) {
+                        echo $row2['promedio'];
+                    } else {
+                        echo "0";
+                    }*/
+        
+
+
+	if ($resultado && $resultado2) {
 		header("location: mostrar.php");
         //echo "Si se inserto";
 	}

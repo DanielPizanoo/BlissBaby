@@ -29,7 +29,7 @@
     </div>
                 <?php
 					include("conexion.php");
-
+    
 					$query = "SELECT * FROM contrato";
 					$resultado= $conexion->query($query);
 					while ($row = $resultado->fetch_assoc()) {
@@ -43,7 +43,14 @@
                     <!--Datos a extraer nombre de la BD-->
                     <h3 class="info__titulo">Elizabeth</h3>
                     <!--Datos a extraer fechaNac de la BD y convertir a edad-->
-                    <p class="info__txt"><?php echo $row['f_nacimiento']; ?>
+                    <p class="info__txt"><?php 
+                    $bday = new DateTime($f_nacimiento); 
+                    $today = new Datetime(date('m.d.y'));
+                    $diff = $today->diff($bday);
+                    //printf(' Your age : %d years, %d month, %d days', $diff->y, $diff->m, $diff->d);
+                    //printf("\n");
+                        echo $diff;
+                        ?></p>
                     
                     
                     <p class="info__txt"><?php echo $row['sexo']; ?></p>
