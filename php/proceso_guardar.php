@@ -6,11 +6,14 @@
             
     $sexo = $_POST['sexo'];
     $tarifa = $_POST['tarifa'];
+
 	$foto = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
 
-	$query = "INSERT INTO contrato(foto,f_nacimiento,sexo,tarifa) VALUES('$foto','$f_nacimiento','$sexo','$tarifa')";
+    //$idempleado = $_SESSION['id_empleado']
+    $idempleado = 1;
+
+	$query = "INSERT INTO contrato(foto,f_nacimiento,sexo,tarifa,idempleado) VALUES('$foto','$f_nacimiento','$sexo','$tarifa','$idempleado')";
 	$resultado = $conexion->query($query);
-    
     /*$sql = "SELECT AVG(YEAR(CURDATE())-YEAR(f_nacimiento) + if(date_format(CURDATE(),'%m-%d') > date_format(f_nacimiento,'%m-%d'), 0,-1 )) as promedio FROM contrato ";
                     $resultado2 = $conexion -> query($sql);
 
@@ -20,9 +23,7 @@
                         echo "0";
                     }*/
         
-
-
-	if ($resultado && $resultado2) {
+	if ($resultado) {
 		header("location: mostrar.php");
         //echo "Si se inserto";
 	}

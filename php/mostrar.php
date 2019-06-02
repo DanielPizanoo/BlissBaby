@@ -32,7 +32,11 @@
     
 					$query = "SELECT * FROM contrato";
 					$resultado= $conexion->query($query);
+    
 					while ($row = $resultado->fetch_assoc()) {
+                        $query2 = "SELECT * FROM empleado WHERE idempleado=". $row['id_empleado'];
+                        $persona= $conexion->query($query2);
+                        $persona = $persona->fetch_assoc();
 				?>
     <main class="main">
         <div class="contenedor">
@@ -41,21 +45,21 @@
                 <article class="info__columna">
                     <img src="data: image/jpg;base64,<?php echo base64_encode($row['foto']); ?>"/>
                     <!--Datos a extraer nombre de la BD-->
-                    <h3 class="info__titulo">Elizabeth</h3>
+                    <h3 class="info__titulo"><?php 
+                        echo $persona['nombre']. ' '. $persona['apellidos'];?></h3>
                     <!--Datos a extraer fechaNac de la BD y convertir a edad-->
                     <p class="info__txt"><?php 
-                    $bday = new DateTime($f_nacimiento); 
+                    $bday = new DateTime($row['f_nacimiento']); 
                     $today = new Datetime(date('m.d.y'));
                     $diff = $today->diff($bday);
-                    //printf(' Your age : %d years, %d month, %d days', $diff->y, $diff->m, $diff->d);
+                    echo($diff->format('%y años'));
                     //printf("\n");
-                        echo $diff;
+                    //    echo $diff;
                         ?></p>
                     
                     
-                    <p class="info__txt"><?php echo $row['sexo']; ?></p>
-                    <p class="info__txt">TARIFA</p>
-                    <p class="info__txt"><?php echo $row['tarifa']; ?></p>
+                    <p class="info__txt">GENERO:  <?php echo $row['sexo']; ?></p>
+                    <p class="info__txt">TARIFA:  <?php echo $row['tarifa']; ?></p>
                     
                     <a href="modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>">Modificar</a>
                     <a href="eliminar.php?id_empleado=<?php echo $row['id_empleado']; ?>">Eliminar</a>
