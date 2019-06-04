@@ -34,7 +34,7 @@
 					$resultado= $conexion->query($query);
     
 					while ($row = $resultado->fetch_assoc()) {
-                        $query2 = "SELECT * FROM empleado WHERE idempleado=". $row['id_empleado'];
+                        $query2 = "SELECT * FROM empleado WHERE idempleado=". $row['idempleado'];
                         $persona= $conexion->query($query2);
                         $persona = $persona->fetch_assoc();
 				?>

@@ -8,8 +8,8 @@
     $tarifa = $_POST['tarifa'];
 
 	$foto = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
-
-    //$idempleado = $_SESSION['id_empleado']
+    
+    //$idempleado = $_SESSION['id_empleado'];
     $idempleado = 1;
 
 	$query = "INSERT INTO contrato(foto,f_nacimiento,sexo,tarifa,idempleado) VALUES('$foto','$f_nacimiento','$sexo','$tarifa','$idempleado')";
