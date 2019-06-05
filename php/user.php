@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA">
     <title>BlissBaby</title>
-    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/ini.css">
     <link href="https://file.myfontastic.com/t2QshyG9nHANCLZAGGRQTA/icons.css" rel="stylesheet">
 </head>
 
@@ -38,7 +38,6 @@
                         $persona= $conexion->query($query2);
                         $persona = $persona->fetch_assoc();
 				?>
-    <main class="main">
         <div class="contenedor">
             <!--<h2 class="section__titulo">Niñer@s</h2>-->
             <section class="info1">
@@ -60,15 +59,15 @@
                     
                     <p class="info__txt">GENERO:  <?php echo $row['sexo']; ?></p>
                     <p class="info__txt">TARIFA:  <?php echo $row['tarifa']; ?></p>
-                    <p class="info__txt">Numero de contacto:  <?php echo $row['telefono']; ?></p>
-                    
+                    <p class="info__txt">Numero de contacto:  <?php echo $persona['telefono']; ?></p>
+                    <p class="info__txt">Correo:  <?php echo $persona['email']; ?></p>
+                    <input type="button" value="Regresar" name="regresar" onclick="window.history.back()" />
                 <?php
 					}
 				?>
                 </article>
             </section>
         </div>
-    </main>
 
     <footer class="footer">
         <div class="social"></div>

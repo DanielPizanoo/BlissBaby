@@ -6,24 +6,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA">
     <title>BlissBaby</title>
-    <link rel="stylesheet" href="../css/ini.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link href="../css/solicitudes.css" rel="stylesheet" type="text/css">
     <link href="https://file.myfontastic.com/t2QshyG9nHANCLZAGGRQTA/icons.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="header">
-        <div class="contenedor">
-            <span class="icon-menu" id="btn-menu"></span>
-            <nav class="nav" id="nav">
-                <ul class="menu">
-                    <li class="menu__item"><a class="menu__link" href="../inicio.php">Inicio</a> </li>
-                    <li class="menu__item"><a class="menu__link" href="../servicio.php">Servicios</a> </li>
-                    <li class="menu__item"><a class="menu__link select" href="../php/usuario.php">Logueado</a> </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    
     <div class="banner">
         <img src="../img/BlissBaby.png" alt="" class="logo">
         <img src="../img/nine.jpg" alt="" class="banner__img">
@@ -50,6 +39,7 @@
                         $mensaje = "<h1>No hay registros que coincidan con su escritorio de busqueda.</h1>";
                     }
 				?>
+    <div class="contenedor">
     <table align="center">
         <thead>
             <td>Imagen</td>
@@ -57,7 +47,8 @@
             <td>Edad</td>
             <td>Genero</td>
             <td>Tarifa</td>
-            <td>Contratar</td>
+            <td>Telefono</td>
+            <td>Correo</td>
         </thead>
         <tbody>
 
@@ -74,24 +65,25 @@
                 <td><?php $bday = new DateTime($fila['f_nacimiento']); 
                     $today = new Datetime(date('m.d.y'));
                     $diff = $today->diff($bday);
-                    echo filtrado($diff->format('%y')); ?></td>
+                    echo filtrado($diff->format('%y años')); ?></td>
                 <td><?php echo filtrado($fila['sexo']); ?></td>
                 <td><?php echo filtrado($fila['tarifa']); ?> </td> 
                 
-                <td><input type="submit" id="submit" name="submit" value="Contratar" > </td>
+                <td>Telefono:  <?php echo $persona['telefono']; ?></td>
+                <td>Correo:  <?php echo $persona['email']; ?></td>
                 
             </tr>
             <?php
         }
         ?>
         </tbody>
-    </table>
-                    
-                    
+    </table>  
                     <?php
 					}
 				    ?>
         </div>
+        </div>
+    
 
     <footer class="footer">
         <div class="social"></div>

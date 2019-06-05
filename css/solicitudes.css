@@ -22,12 +22,12 @@ th, td {
 }
 
 thead {
-    background-color: #23A386;
+    background-color: #478EFC;
     color: white;
-    border-bottom: solid 5px #23A386;
+    border-bottom: solid 5px #478EFC;
 }
 
 img {
-    width: 130px;
-    height: 170px;
+    width: 80px;
+    height: 130px;
 }
