@@ -34,7 +34,7 @@
                 <article class="info__columna">
                     <img src="../img/elizabeth.jpg" alt="" class="info__img">
                     <!--Datos a extraer nombre de la BD-->
-                    <h3 class="info__titulo">Elizabeth</h3>
+                    <h3 class="info__titulo"> <?php echo $mostraru; ?> </h3>
                     <!--Datos a extraer fechaNac de la BD y convertir a edad-->
                     <p class="info__txt">44 años</p>
                     <p class="info__txt">$30 la hora por niño</p>
