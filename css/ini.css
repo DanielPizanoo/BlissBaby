@@ -32,67 +32,6 @@ h6 {
     color: #25DDF8;
 }*/
 
-/*-------------------Estilos de LOGIN--------------------*/
-.box{
-    position: absolute;
-    width: 300px;
-    padding: 40px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: #478EFC;
-    background: rgba(0,0,0,0.5);
-    text-align: center;
-}
-.box input[type = text],.box input[type = "password"]{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #3498db;
-    padding: 14px 10px;
-    width: 200px;
-    outline: none;
-    color: white;
-    border-radius: 7px;
-    transition: 0.25s;
-}
-.box input[type = text]:focus,.box input[type = "password"]:focus{
-    width: 200px;
-    border-color: #2ecc71; 
-}
-.box input[type = submit]{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #2ecc71;
-    padding: 14px 40px;
-    width: 200px;
-    outline: none;
-    color: white;
-    border-radius: 7px;
-    transition: 0.25s;
-    cursor: pointer;
-}
-
-.box input[type = button]{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #DE0A0A;
-    padding: 14px 40px;
-    width: 200px;
-    outline: none;
-    color: white;
-    border-radius: 7px;
-    transition: 0.25s;
-    cursor: pointer;
-}
 /*-------------------Estilos del header-------------------*/
 .header {
     height: 60px;
@@ -143,6 +82,7 @@ h6 {
     list-style: none;
     padding: 0;
     margin: 0;
+    z-index: 1000px;
 }
 
 .menu__link {
@@ -179,9 +119,8 @@ h6 {
     transform: translateX(-50%) translateY(-50%);
     width: 100%;
     color: #478EFC;
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
 }
 
 .banner__txt {
@@ -189,21 +128,15 @@ h6 {
 
 }
 
-.banner2__titulo {
-    color: #fff;
-}
-
-.banner2__txt {
-    display: none;
-    color: #fff;
-}
-
 .banner__img {
     width: 100%;
     height: 100%;
 }
 
+
+
 /*---------------------Estilo de boton---------------------*/
+
 .buscar .contenido {
     height: 20px;
 }
@@ -319,7 +252,7 @@ a.boton:hover span.center {
     padding: 14px 40px;
     width: 200px;
     outline: none;
-    color: white;
+    color: black;
     border-radius: 5px;
     transition: 0.25s;
     cursor: pointer;

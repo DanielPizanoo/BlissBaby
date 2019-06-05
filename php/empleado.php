@@ -26,6 +26,13 @@
         <img src="../img/BlissBaby.png" alt="" class="logo">
         <img src="../img/nine.jpg" alt="" class="banner__img">
     </div>
+        <?php 
+            include("conexion.php");
+            $query2 = "SELECT nombre, apellidos FROM empleado WHERE idempleado=". $_SESSION['id_empleado'];
+            $persona= $conexion->query($query2);
+            $persona = $persona->fetch_assoc();
+
+            ?>
     <main class="main">
         <div class="form">
             <form class="box" action="proceso_guardar.php" method="POST" enctype="multipart/form-data">
@@ -33,7 +40,7 @@
                 <input class="inputbox" type="file" name="foto" value="" required>
                 <br>
                 <!--Datos a extraer de la BD-->
-                <h3 class="info__titulo"> <?php echo $mostrare; ?> </h3>
+                <h3 class="info__titulo"><?php echo $persona['nombre'].' '.$persona['apellidos']; ?></h3>
                 <!--Datos a GUARDAR en la BD-->
                 <label for="fecha_nac">Fecha de nacimiento</label>
                 <br>
@@ -56,7 +63,9 @@
                 <input type="submit" id="guardar" name="enviar" value="Enviar" />
                 <input type="button" value="Regresar" name="regresar" onclick="window.history.back()" />
             </form>
-
+                <?php
+            // }
+    ?>
         </div>
 
     </main>
