@@ -9,6 +9,10 @@
         $sql = mysqli_query($con, "SELECT email, pass, idempleado FROM empleado WHERE email = '$usuario' and pass = '$pass' ");
         $sql2 = mysqli_query($con, "SELECT email, pass FROM usuario WHERE email = '$usuario' and pass = '$pass' ");
 
+        $row = mysqli_fetch_array($sql);
+        $row2 = mysqli_fetch_array($sql2);
+
+
         if($row['email']==$usuario && $row['pass']==$pass) {
             $_SESSION['usuario'] = $row['email'];
             $_SESSION['id_empleado'] = $row['idempleado'];
@@ -16,10 +20,10 @@
         } 
         elseif ($row2['email'] == $usuario && $row2['pass'] == $pass) {
             $_SESSION['email'] = $row2['email'];
-            header('location: usuario.php');
+            header('Location: usuario.php');
         } 
         else {
-            header('location: login.php');
+            header('Location: login.php');
 
 }
 

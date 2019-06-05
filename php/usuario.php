@@ -16,6 +16,7 @@
     <div class="banner">
         <img src="../img/BlissBaby.png" alt="" class="logo">
         <img src="../img/nine.jpg" alt="" class="banner__img">
+<<<<<<< HEAD
     
                 <?php
 					include("conexion.php");
@@ -81,6 +82,37 @@
                     <?php
 					}
 				    ?>
+=======
+    </div>
+    <main class="main">
+        <div class="contenedor">
+            <!--<h2 class="section__titulo">Niñer@s</h2>-->
+            <section class="info1">
+                <article class="info__columna">
+                    <img src="../img/elizabeth.jpg" alt="" class="info__img">
+                    <!--Datos a extraer nombre de la BD-->
+                    <h3 class="info__titulo">Elizabeth</h3>
+                    <!--Datos a extraer fechaNac de la BD y convertir a edad-->
+                    <p class="info__txt">44 años</p>
+                    <p class="info__txt">$30 la hora por niño</p>
+                    <input type="submit" id="guardar" name="enviar" value="Contratar" />
+                </article>
+                <article class="info__columna">
+                    <img src="../img/laura.jpg" alt="" class="info__img">
+                    <h3 class="info__titulo">Laura</h3>
+                    <p class="info__txt">37 años</p>
+                    <p class="info__txt">$30 la hora por niño</p>
+                    <input type="submit" id="guardar" name="enviar" value="Contratar" />
+                </article>
+                <article class="info__columna">
+                    <img src="../img/vanesa.jpeg" alt="" class="info__img">
+                    <h3 class="info__titulo">Vanesa</h3>
+                    <p class="info__txt">25 años</p>
+                    <p class="info__txt">$30 la hora por niño</p>
+                    <input type="submit" id="guardar" name="enviar" value="Contratar" />
+                </article>
+            </section>
+>>>>>>> parent of bdb82ee... ne
         </div>
         </div>
     

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es" dir="ltr">
 
 <head>
@@ -40,7 +41,11 @@
                 <input class="inputbox" type="file" name="foto" value="" required>
                 <br>
                 <!--Datos a extraer de la BD-->
+<<<<<<< HEAD
                 <h3 class="info__titulo"><?php echo $persona['nombre'].' '.$persona['apellidos']; ?></h3>
+=======
+                <h3 class="info__titulo">Elizabeth Sanchez Castellanos</h3>
+>>>>>>> parent of bdb82ee... ne
                 <!--Datos a GUARDAR en la BD-->
                 <label for="fecha_nac">Fecha de nacimiento</label>
                 <br>
