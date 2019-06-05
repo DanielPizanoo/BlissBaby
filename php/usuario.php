@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA">
     <title>BlissBaby</title>
-    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/ini.css">
     <link href="../css/solicitudes.css" rel="stylesheet" type="text/css">
     <link href="https://file.myfontastic.com/t2QshyG9nHANCLZAGGRQTA/icons.css" rel="stylesheet">
 </head>
@@ -50,7 +50,6 @@
                         $mensaje = "<h1>No hay registros que coincidan con su escritorio de busqueda.</h1>";
                     }
 				?>
-        <div class="contenedor">
     <table align="center">
         <thead>
             <td>Imagen</td>
@@ -77,15 +76,16 @@
                     $diff = $today->diff($bday);
                     echo filtrado($diff->format('%y')); ?></td>
                 <td><?php echo filtrado($fila['sexo']); ?></td>
-                <td><?php echo filtrado($fila['tarifa']); ?> </td>     
-                <td><span class="icon-contratar" id="btn-contratar"></span></td>
+                <td><?php echo filtrado($fila['tarifa']); ?> </td> 
+                
+                <td><input type="submit" id="submit" name="submit" value="Contratar" > </td>
+                
             </tr>
             <?php
         }
         ?>
         </tbody>
     </table>
-</div>
                     
                     
                     <?php
