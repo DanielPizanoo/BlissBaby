@@ -30,7 +30,7 @@
                 <?php
 					include("conexion.php");
     
-					$query = "SELECT * FROM contrato WHERE idempleado=".$_SESSION['id_empleado'];
+					$query = "SELECT * FROM contrato";
 					$resultado= $conexion->query($query);
     
 					while ($row = $resultado->fetch_assoc()) {

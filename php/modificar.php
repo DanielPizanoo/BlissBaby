@@ -35,13 +35,6 @@
 					$query = "SELECT * FROM contrato WHERE id_empleado = '$id'";
 					$resultado= $conexion->query($query);
 					$row = $resultado->fetch_assoc(); 
-                    
-    
-            $query2 = "SELECT nombre, apellidos FROM empleado WHERE idempleado=". $_SESSION['id_empleado'];
-            $persona= $conexion->query($query2);
-            $persona = $persona->fetch_assoc();
-
-            
 				?>
     <main class="main">
         <div class="form">
@@ -52,7 +45,7 @@
                 <input class="inputbox" type="file" name="foto" value="" required>
                 <br>
                 <!--Datos a extraer de la BD-->
-                <h3 class="info__titulo"><?php echo $persona['nombre'].' '.$persona['apellidos']; ?></h3>
+                <h3 class="info__titulo">Elizabeth Sanchez Castellanos</h3>
                 <!--Datos a GUARDAR en la BD-->
                 <label for="fecha_nac">Fecha de nacimiento</label>
                 <br>
